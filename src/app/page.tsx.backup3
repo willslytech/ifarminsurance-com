@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -146,10 +145,10 @@ export default function Home() {
                   Auto
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
                 </a>
-                <Link href="/home" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
+                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   Home
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </Link>
+                </a>
                 <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   Renters
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
@@ -178,7 +177,7 @@ export default function Home() {
               {/* Phone Number */}
               <div className="hidden md:flex items-center gap-2 text-white text-sm font-medium">
                 <Phone className="h-4 w-4" />
-                <span>843-858-3415</span>
+                <span>(888) 555-FARM</span>
               </div>
 
               {/* Sign In Button */}
@@ -205,9 +204,9 @@ export default function Home() {
               <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Auto <ChevronDown className="h-4 w-4 text-[#ff6600]" />
               </a>
-              <Link href="/home" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
+              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Home <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </Link>
+              </a>
               <a href="#" className="flex items-center justify-between text-[#ff6600] py-2 text-sm font-bold">
                 Farm <ChevronDown className="h-4 w-4" />
               </a>
@@ -225,7 +224,7 @@ export default function Home() {
               </a>
               <div className="pt-3 border-t border-blue-700/50 flex items-center gap-2 text-white text-sm font-medium">
                 <Phone className="h-4 w-4" />
-                <span>843-858-3415</span>
+                <span>(888) 555-FARM</span>
               </div>
               <div className="pt-2">
                 <Button className="w-full bg-white text-[#1e3a8a] hover:bg-gray-100 font-medium text-sm h-9 rounded-full">
@@ -421,7 +420,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl sm:text-5xl font-semibold text-[#1D1D1F] tracking-tight">
-              Why Us
+              Why Choose iFarmInsurance?
             </h2>
             <p className="mt-4 text-xl text-[#6E6E73]">
               We make insurance simple, fast, and affordable for farmers.

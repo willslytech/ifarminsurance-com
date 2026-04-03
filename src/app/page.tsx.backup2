@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Menu, X, Shield, Clock, DollarSign, CheckCircle2, Star, ChevronRight, Tractor, Home as HomeIcon, Zap, Heart, ChevronDown, Phone, User } from 'lucide-react'
+import { Menu, X, Shield, Clock, DollarSign, CheckCircle2, Star, ChevronRight, Tractor, Home as HomeIcon, Zap, Heart } from 'lucide-react'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -121,114 +121,71 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F5F7]">
-      {/* Navigation - Insurify Style */}
-      <nav className="sticky top-0 z-50 bg-[#1e3a8a]">
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo and Primary Navigation */}
-            <div className="flex items-center gap-8">
-              {/* Logo */}
-              <div className="flex items-center gap-2">
-                <img
-                  src="/upload/logo.jpg"
-                  alt="iFarmInsurance"
-                  className="h-8 w-auto"
-                />
-                <span className="text-xl font-bold text-white tracking-wide">
-                  iFARM INSURANCE
-                </span>
-              </div>
-
-              {/* Desktop Navigation Menu */}
-              <div className="hidden lg:flex items-center gap-6">
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
-                  Auto
-                  <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
-                  Home
-                  <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
-                  Renters
-                  <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
-                <a href="#" className="flex items-center gap-1 text-[#ff6600] text-sm font-bold hover:text-[#ff8533] transition-colors group">
-                  Farm
-                  <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff8533]" />
-                </a>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
-                  More Coverage
-                  <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
-                  Reports
-                  <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
-                  About
-                  <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
-              </div>
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <img
+                src="/upload/logo.jpg"
+                alt="iFarmInsurance"
+                className="h-10 w-auto"
+              />
+              <span className="text-xl font-semibold text-[#1D1D1F]">
+                iFarm Insurance
+              </span>
             </div>
 
-            {/* Right Side - Phone and Sign In */}
-            <div className="flex items-center gap-4">
-              {/* Phone Number */}
-              <div className="hidden md:flex items-center gap-2 text-white text-sm font-medium">
-                <Phone className="h-4 w-4" />
-                <span>(888) 555-FARM</span>
-              </div>
-
-              {/* Sign In Button */}
-              <Button className="bg-white text-[#1e3a8a] hover:bg-gray-100 font-medium text-sm px-6 h-9 rounded-full">
-                Sign In
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#features" className="text-[#1D1D1F] hover:text-[#007AFF] transition-colors text-sm font-medium">
+                Features
+              </a>
+              <a href="#how-it-works" className="text-[#1D1D1F] hover:text-[#007AFF] transition-colors text-sm font-medium">
+                How It Works
+              </a>
+              <a href="#testimonials" className="text-[#1D1D1F] hover:text-[#007AFF] transition-colors text-sm font-medium">
+                Testimonials
+              </a>
+              <Button variant="ghost" className="text-[#1D1D1F] hover:text-[#007AFF]">
+                Log In
               </Button>
-
-              {/* Mobile menu button */}
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden p-2 rounded-lg hover:bg-blue-800/50 text-white"
-                aria-label="Toggle menu"
-              >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
+              <Button className="bg-[#007AFF] hover:bg-[#0051D5] text-white">
+                Get Started
+              </Button>
             </div>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-[#1e3a8a] border-t border-blue-700/50">
-            <div className="px-4 py-4 space-y-2">
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
-                Auto <ChevronDown className="h-4 w-4 text-[#ff6600]" />
+          <div className="md:hidden bg-white border-t border-gray-200/50">
+            <div className="px-4 py-4 space-y-3">
+              <a href="#features" className="block text-[#1D1D1F] hover:text-[#007AFF] py-2 text-sm font-medium">
+                Features
               </a>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
-                Home <ChevronDown className="h-4 w-4 text-[#ff6600]" />
+              <a href="#how-it-works" className="block text-[#1D1D1F] hover:text-[#007AFF] py-2 text-sm font-medium">
+                How It Works
               </a>
-              <a href="#" className="flex items-center justify-between text-[#ff6600] py-2 text-sm font-bold">
-                Farm <ChevronDown className="h-4 w-4" />
+              <a href="#testimonials" className="block text-[#1D1D1F] hover:text-[#007AFF] py-2 text-sm font-medium">
+                Testimonials
               </a>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
-                Renters <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
-                More Coverage <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
-                Reports <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
-                About <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
-              <div className="pt-3 border-t border-blue-700/50 flex items-center gap-2 text-white text-sm font-medium">
-                <Phone className="h-4 w-4" />
-                <span>(888) 555-FARM</span>
-              </div>
-              <div className="pt-2">
-                <Button className="w-full bg-white text-[#1e3a8a] hover:bg-gray-100 font-medium text-sm h-9 rounded-full">
-                  Sign In
+              <div className="pt-3 border-t border-gray-200 space-y-2">
+                <Button variant="ghost" className="w-full text-[#1D1D1F]">
+                  Log In
+                </Button>
+                <Button className="w-full bg-[#007AFF] hover:bg-[#0051D5] text-white">
+                  Get Started
                 </Button>
               </div>
             </div>

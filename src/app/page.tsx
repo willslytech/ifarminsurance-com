@@ -238,16 +238,28 @@ export default function Home() {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#F5F5F7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      {/* Hero Section with Background Image */}
+      <section className="relative overflow-hidden min-h-[900px]">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/upload/tractor.jpeg"
+            alt="Farm equipment"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-[#F5F5F7]" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-[#1D1D1F] tracking-tight leading-[1.1]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-white tracking-tight leading-[1.1]">
               Farm Insurance,
               <br />
-              <span className="text-[#007AFF]">Simplified.</span>
+              <span className="text-[#ff6600]">Simplified.</span>
             </h1>
-            <p className="mt-6 text-xl text-[#6E6E73] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
               Compare quotes from top insurers in minutes. Protect what matters most with coverage designed for farmers.
             </p>
           </div>
@@ -346,7 +358,7 @@ export default function Home() {
             </CardContent>
           </Card>
 
-          <p className="mt-8 text-center text-sm text-[#6E6E73]">
+          <p className="mt-8 text-center text-sm text-white/80">
             Trusted by over 50,000 farmers nationwide
           </p>
         </div>

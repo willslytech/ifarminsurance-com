@@ -14,24 +14,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "iFarmInsurance - Compare Farm, Home, Auto & Renters Insurance",
+  description: "Compare insurance quotes from top carriers in minutes. Protect your farm, home, and family with comprehensive insurance coverage designed for farmers.",
+  keywords: ["farm insurance", "home insurance", "auto insurance", "renters insurance", "agricultural insurance", "iFarmInsurance"],
+  authors: [{ name: "iFarmInsurance Team" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/upload/logo.jpg",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "iFarmInsurance - Farm Insurance Simplified",
+    description: "Compare insurance quotes from top carriers in minutes. Protect what matters most.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    title: "iFarmInsurance - Farm Insurance Simplified",
+    description: "Compare insurance quotes from top carriers in minutes.",
   },
 };
 

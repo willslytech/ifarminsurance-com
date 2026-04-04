@@ -166,7 +166,7 @@ export default function Home() {
                   Reports
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
                 </a>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
+                <a href="#about" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   About
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
                 </a>
@@ -220,7 +220,7 @@ export default function Home() {
               <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Reports <ChevronDown className="h-4 w-4 text-[#ff6600]" />
               </a>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
+              <a href="#about" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 About <ChevronDown className="h-4 w-4 text-[#ff6600]" />
               </a>
               <div className="pt-3 border-t border-blue-700/50 flex items-center gap-2 text-white text-sm font-medium">
@@ -523,6 +523,119 @@ export default function Home() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section with Farm Equipment Images */}
+      <section id="about" className="py-24 bg-[#F5F5F7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl sm:text-5xl font-semibold text-[#1D1D1F] tracking-tight mb-4">
+              About Us
+            </h2>
+            <p className="text-xl text-[#6E6E73] leading-relaxed">
+              At iFarmInsurance, we understand the unique challenges farmers face. From grain bins to cotton pickers, from hog houses to equipment sheds - we protect it all.
+            </p>
+          </div>
+
+          {/* Farm Equipment Image Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="/upload/grain-bins-6.jpg"
+                  alt="Grain Bins"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-[#1D1D1F]">Grain Storage</h3>
+                <p className="text-sm text-[#6E6E73] mt-1">Protect your grain bins and storage facilities</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="/upload/hog-houses.jpg"
+                  alt="Hog Houses"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-[#1D1D1F]">Livestock Facilities</h3>
+                <p className="text-sm text-[#6E6E73] mt-1">Coverage for hog houses and animal housing</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="/upload/new-chicken-house-2.jpg"
+                  alt="Chicken Houses"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-[#1D1D1F]">Poultry Operations</h3>
+                <p className="text-sm text-[#6E6E73] mt-1">Comprehensive poultry house insurance</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="/upload/equipment-shed-2.jpg"
+                  alt="Equipment Shed"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-[#1D1D1F]">Equipment Storage</h3>
+                <p className="text-sm text-[#6E6E73] mt-1">Protect your valuable equipment and machinery</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="/upload/grain-elevators.jpg"
+                  alt="Grain Elevators"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-[#1D1D1F]">Grain Handling</h3>
+                <p className="text-sm text-[#6E6E73] mt-1">Coverage for grain elevators and handling systems</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src="/upload/burned-tractor-2.jpg"
+                  alt="Farm Equipment Protection"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-[#1D1D1F]">Equipment Coverage</h3>
+                <p className="text-sm text-[#6E6E73] mt-1">Protection against fire, theft, and accidents</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Mission Statement */}
+          <div className="max-w-3xl mx-auto text-center">
+            <Card className="border-0 shadow-lg bg-white p-8">
+              <h3 className="text-2xl font-semibold text-[#1D1D1F] mb-4">
+                Our Mission
+              </h3>
+              <p className="text-[#6E6E73] text-lg leading-relaxed">
+                To provide farmers with affordable, comprehensive insurance solutions that protect their livelihoods. We combine modern technology with personalized service to deliver the best insurance experience in the industry.
+              </p>
+            </Card>
           </div>
         </div>
       </section>

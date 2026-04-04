@@ -142,22 +142,22 @@ export default function Home() {
 
               {/* Desktop Navigation Menu */}
               <div className="hidden lg:flex items-center gap-6">
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
+                <Link href="/auto" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   Auto
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
+                </Link>
                 <Link href="/home" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   Home
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
                 </Link>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
+                <Link href="/renter" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   Renters
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
-                <a href="#" className="flex items-center gap-1 text-[#ff6600] text-sm font-bold hover:text-[#ff8533] transition-colors group">
+                </Link>
+                <Link href="/farm" className="flex items-center gap-1 text-[#ff6600] text-sm font-bold hover:text-[#ff8533] transition-colors group">
                   Farm
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff8533]" />
-                </a>
+                </Link>
                 <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   More Coverage
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
@@ -202,18 +202,18 @@ export default function Home() {
         {isMenuOpen && (
           <div className="lg:hidden bg-[#1e3a8a] border-t border-blue-700/50">
             <div className="px-4 py-4 space-y-2">
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
+              <Link href="/auto" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Auto <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
+              </Link>
               <Link href="/home" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Home <ChevronDown className="h-4 w-4 text-[#ff6600]" />
               </Link>
-              <a href="#" className="flex items-center justify-between text-[#ff6600] py-2 text-sm font-bold">
-                Farm <ChevronDown className="h-4 w-4" />
-              </a>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
+              <Link href="/renter" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Renters <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
+              </Link>
+              <Link href="/farm" className="flex items-center justify-between text-[#ff6600] py-2 text-sm font-bold">
+                Farm <ChevronDown className="h-4 w-4" />
+              </Link>
               <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 More Coverage <ChevronDown className="h-4 w-4 text-[#ff6600]" />
               </a>

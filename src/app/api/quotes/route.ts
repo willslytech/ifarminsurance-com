@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { db } from '@/lib/db'
+import { calculateQuotes, QuoteRequest } from '@/lib/quote-calculator'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { zipCode, insuranceType, email, firstName, lastName, phone, farmSize, propertyValue, vehicleMake, vehicleModel, vehicleYear, coverageAmount } = body
 
     // Validate required fields
+    const { zipCode, insuranceType, email, phoneNumber } = body
+
     if (!zipCode || !insuranceType || !email) {
       return NextResponse.json(
         { error: 'Missing required fields: zipCode, insuranceType, and email are required' },
@@ -14,173 +15,82 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Validate ZIP code (5 digits)
+    if (!/^\d{5}$/.test(zipCode)) {
+      return NextResponse.json(
+        { error: 'Invalid ZIP code. Please enter a 5-digit ZIP code.' },
+        { status: 400 }
+      )
+    }
+
     // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
-        { error: 'Invalid email format' },
+        { error: 'Invalid email address format' },
         { status: 400 }
       )
     }
 
-    // Validate zip code (basic US zip code validation)
-    const zipRegex = /^\d{5}(-\d{4})?$/
-    if (!zipRegex.test(zipCode)) {
+    // Validate insurance type
+    const validTypes = ['auto', 'farm', 'home', 'renters', 'life']
+    if (!validTypes.includes(insuranceType)) {
       return NextResponse.json(
-        { error: 'Invalid ZIP code format' },
+        { error: `Invalid insurance type. Must be one of: ${validTypes.join(', ')}` },
         { status: 400 }
       )
     }
 
-    // Create quote request
-    const quoteRequest = await db.quoteRequest.create({
-      data: {
-        zipCode,
-        insuranceType,
-        email,
-        firstName: firstName || null,
-        lastName: lastName || null,
-        phone: phone || null,
-        farmSize: farmSize ? parseFloat(farmSize) : null,
-        propertyValue: propertyValue ? parseFloat(propertyValue) : null,
-        vehicleMake: vehicleMake || null,
-        vehicleModel: vehicleModel || null,
-        vehicleYear: vehicleYear ? parseInt(vehicleYear) : null,
-        coverageAmount: coverageAmount ? parseFloat(coverageAmount) : null,
-        status: 'processing',
-      },
-    })
-
-    // Simulate generating quotes from multiple providers
-    // In a real application, this would integrate with external insurance APIs
-    const quotes = generateMockQuotes(quoteRequest.id, insuranceType)
-
-    // Save the generated quotes
-    for (const quote of quotes) {
-      await db.insuranceQuote.create({
-        data: quote,
-      })
+    // Prepare quote request
+    const quoteRequest: QuoteRequest = {
+      zipCode,
+      insuranceType,
+      email,
+      phoneNumber: phoneNumber || undefined,
+      // Optional fields with defaults
+      driverAge: body.driverAge,
+      vehicleType: body.vehicleType,
+      vehicleYear: body.vehicleYear,
+      farmSize: body.farmSize,
+      farmType: body.farmType,
+      equipmentValue: body.equipmentValue,
+      homeValue: body.homeValue,
+      homeAge: body.homeAge,
+      coverageLevel: body.coverageLevel || 'standard',
+      deductible: body.deductible || 500,
+      claimsInPast5Years: body.claimsInPast5Years || 0,
     }
 
-    // Update quote request status
-    await db.quoteRequest.update({
-      where: { id: quoteRequest.id },
-      data: { status: 'completed' },
-    })
+    // Calculate quotes
+    const quotes = calculateQuotes(quoteRequest)
 
-    // Fetch the created quotes
-    const savedQuotes = await db.insuranceQuote.findMany({
-      where: { quoteRequestId: quoteRequest.id },
-    })
+    // Log the request (without PII in production)
+    console.log(`Quote request generated for ${insuranceType} insurance in ${zipCode}`)
 
+    // Return quotes
     return NextResponse.json({
       success: true,
-      quoteRequestId: quoteRequest.id,
-      quotes: savedQuotes,
-      message: 'Quotes generated successfully',
-    }, { status: 201 })
-
-  } catch (error) {
-    console.error('Error creating quote request:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
-  }
-}
-
-function generateMockQuotes(quoteRequestId: string, insuranceType: string) {
-  const providers = [
-    'FarmGuard Insurance',
-    'AgriProtect',
-    'CountryWide Farmers',
-    'Rural Shield',
-    'Harvest Insurance Co.',
-  ]
-
-  // Base premiums by insurance type
-  const basePremiums: Record<string, { min: number; max: number }> = {
-    farm: { min: 150, max: 450 },
-    home: { min: 80, max: 250 },
-    auto: { min: 60, max: 200 },
-    life: { min: 30, max: 120 },
-  }
-
-  const range = basePremiums[insuranceType] || { min: 50, max: 300 }
-
-  return providers.map((provider) => {
-    const premium = Math.random() * (range.max - range.min) + range.min
-    const deductible = [500, 1000, 1500, 2000][Math.floor(Math.random() * 4)]
-
-    return {
-      quoteRequestId,
-      provider,
-      premium: Math.round(premium * 100) / 100,
-      deductible,
-      coverageDetails: JSON.stringify({
-        liability: 'Standard',
-        comprehensive: true,
-        collision: insuranceType === 'auto',
-        medical: true,
-        additional: ['Roadside Assistance', 'Rental Coverage'],
-      }),
-    }
-  })
-}
-
-export async function GET(request: NextRequest) {
-  try {
-    const searchParams = request.nextUrl.searchParams
-    const email = searchParams.get('email')
-    const quoteRequestId = searchParams.get('quoteRequestId')
-
-    if (quoteRequestId) {
-      // Get specific quote request
-      const quoteRequest = await db.quoteRequest.findUnique({
-        where: { id: quoteRequestId },
-        include: {
-          quotes: true,
-        },
-      })
-
-      if (!quoteRequest) {
-        return NextResponse.json(
-          { error: 'Quote request not found' },
-          { status: 404 }
-        )
-      }
-
-      return NextResponse.json({ success: true, data: quoteRequest })
-    }
-
-    if (email) {
-      // Get all quote requests for an email
-      const quoteRequests = await db.quoteRequest.findMany({
-        where: { email },
-        include: {
-          quotes: true,
-        },
-        orderBy: { createdAt: 'desc' },
-      })
-
-      return NextResponse.json({ success: true, data: quoteRequests })
-    }
-
-    // Get all quote requests (admin use)
-    const quoteRequests = await db.quoteRequest.findMany({
-      include: {
-        quotes: true,
-      },
-      orderBy: { createdAt: 'desc' },
-      take: 50,
+      quotes,
+      requestId: crypto.randomUUID(),
+      generatedAt: new Date().toISOString(),
     })
-
-    return NextResponse.json({ success: true, data: quoteRequests })
   } catch (error) {
-    console.error('Error fetching quote requests:', error)
+    console.error('Error generating quotes:', error)
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Failed to generate quotes. Please try again later.' },
       { status: 500 }
     )
   }
+}
+
+// GET endpoint for available insurance types
+export async function GET() {
+  return NextResponse.json({
+    insuranceTypes: [
+      { value: 'auto', label: 'Auto Insurance', description: 'Protect your vehicle on and off the road' },
+      { value: 'farm', label: 'Farm Insurance', description: 'Comprehensive coverage for farms and agriculture' },
+      { value: 'home', label: 'Home Insurance', description: 'Protect your home and belongings' },
+      { value: 'renters', label: 'Renters Insurance', description: 'Coverage for renters and tenants' },
+      { value: 'life', label: 'Life Insurance', description: 'Financial protection for your loved ones' },
+    ],
+  })
 }

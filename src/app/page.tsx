@@ -15,6 +15,7 @@ export default function Home() {
     zipCode: '',
     insuranceType: '',
     email: '',
+    phoneNumber: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showResults, setShowResults] = useState(false)
@@ -303,6 +304,21 @@ export default function Home() {
                     placeholder="your@email.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="h-12 text-base"
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="phoneNumber" className="text-sm font-medium text-[#1D1D1F]">
+                    Phone Number
+                  </Label>
+                  <Input
+                    id="phoneNumber"
+                    type="tel"
+                    placeholder="(555) 123-4567"
+                    value={formData.phoneNumber}
+                    onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                     className="h-12 text-base"
                     required
                   />

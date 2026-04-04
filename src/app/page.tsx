@@ -166,20 +166,20 @@ export default function Home() {
                   Reports
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
                 </a>
-                <a href="#about" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
+                <Link href="/contact" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   About
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
+                </Link>
               </div>
             </div>
 
             {/* Right Side - Phone and Sign In */}
             <div className="flex items-center gap-4">
               {/* Phone Number */}
-              <div className="hidden md:flex items-center gap-2 text-white text-sm font-medium">
+              <Link href="tel:843-858-3415" className="hidden md:flex items-center gap-2 text-white text-sm font-medium hover:text-[#ff6600] transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>843-858-3415</span>
-              </div>
+              </Link>
 
               {/* Sign In Button */}
               <Button className="bg-white text-[#1e3a8a] hover:bg-gray-100 font-medium text-sm px-6 h-9 rounded-full">
@@ -220,13 +220,13 @@ export default function Home() {
               <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Reports <ChevronDown className="h-4 w-4 text-[#ff6600]" />
               </a>
-              <a href="#about" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
+              <Link href="/contact" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 About <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
-              <div className="pt-3 border-t border-blue-700/50 flex items-center gap-2 text-white text-sm font-medium">
+              </Link>
+              <Link href="tel:843-858-3415" className="pt-3 border-t border-blue-700/50 flex items-center gap-2 text-white text-sm font-medium hover:text-[#ff6600] transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>843-858-3415</span>
-              </div>
+              </Link>
               <div className="pt-2">
                 <Button className="w-full bg-white text-[#1e3a8a] hover:bg-gray-100 font-medium text-sm h-9 rounded-full">
                   Sign In
@@ -649,13 +649,15 @@ export default function Home() {
           <p className="text-xl text-white/90 mb-8">
             Get free quotes from top insurers in minutes. No obligation.
           </p>
-          <Button
-            size="lg"
-            className="h-14 px-8 text-base font-medium bg-white text-[#007AFF] hover:bg-gray-100"
-          >
-            Start Your Free Quote
-            <ChevronRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link href="/quote-type-selection">
+            <Button
+              size="lg"
+              className="h-14 px-8 text-base font-medium bg-white text-[#007AFF] hover:bg-gray-100"
+            >
+              Start Your Free Quote
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -667,9 +669,9 @@ export default function Home() {
               <h4 className="font-semibold mb-4 text-white">Company</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -724,9 +726,9 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">

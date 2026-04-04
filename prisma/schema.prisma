@@ -16,7 +16,7 @@ datasource db {
 model QuoteRequest {
   id              String   @id @default(cuid())
   zipCode         String
-  insuranceType   String   // farm, home, auto, life
+  insuranceType   String   // farm, home, auto, life, renters
   email           String
   firstName       String?
   lastName        String?
@@ -30,6 +30,9 @@ model QuoteRequest {
   status          String   @default("pending") // pending, processing, completed, failed
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+
+  // Relations
+  quotes          InsuranceQuote[]
 }
 
 model InsuranceQuote {
@@ -39,6 +42,58 @@ model InsuranceQuote {
   premium         Float    // monthly or annual premium
   deductible      Float?
   coverageDetails String?  // JSON string with coverage details
+  createdAt       DateTime @default(now())
+
+  // Advanced fields for the new quote algorithm
+  insurerId       String?  // internal insurer ID
+  rankScore       Float?   // calculated ranking score
+  savingsVsAverage Float?  // percentage savings vs average
+  isBestValue     Boolean  @default(false)
+  isAnomaly       Boolean  @default(false) // was this quote filtered as an anomaly?
+
+  // Relations
+  quoteRequest    QuoteRequest @relation(fields: [quoteRequestId], references: [id], onDelete: Cascade)
+}
+
+model Insurer {
+  id              String   @id @default(cuid())
+  name            String
+  insurerCode     String   @unique // external code from carrier
+  baseRateMultiplier Float
+  reputationScore Float
+  marketShare     Float
+  isActive        Boolean  @default(true)
+  apiEndpoint     String?
+  lastSynced      DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model AnonymizedQuoteData {
+  id              String   @id @default(cuid())
+  userIdHash      String   // anonymized user ID
+  zipCode         String
+  state           String
+  ageRange        String
+  riskScore       Float
+  insuranceType   String
+  averagePremium  Float
+  lowestPremium   Float
+  highestPremium  Float
+  quotesCount     Int
+  timestamp       DateTime @default(now())
+}
+
+model QuoteAnalytics {
+  id              String   @id @default(cuid())
+  date            DateTime
+  insuranceType   String
+  state           String
+  totalQuotes     Int
+  averagePremium  Float
+  medianPremium   Float
+  minPremium      Float
+  maxPremium      Float
   createdAt       DateTime @default(now())
 }
 

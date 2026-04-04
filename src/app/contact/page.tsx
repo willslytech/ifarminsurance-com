@@ -157,7 +157,7 @@ export default function ContactUs() {
 
                           <div className="space-y-2">
                             <Label htmlFor="phone" className="text-sm font-medium text-[#1D1D1F]">
-                              Phone Number
+                              Phone Number (optional)
                             </Label>
                             <Input
                               id="phone"

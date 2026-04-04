@@ -158,14 +158,14 @@ export default function Home() {
                   Farm
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff8533]" />
                 </Link>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
+                <Link href="/quote-type-selection" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   More Coverage
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
-                <a href="#" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
+                </Link>
+                <Link href="/quote-type-selection" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   Reports
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
-                </a>
+                </Link>
                 <Link href="/contact" className="flex items-center gap-1 text-white text-sm font-medium hover:text-[#ff6600] transition-colors group">
                   About
                   <ChevronDown className="h-4 w-4 text-[#ff6600] group-hover:text-[#ff6600]" />
@@ -214,12 +214,12 @@ export default function Home() {
               <Link href="/farm" className="flex items-center justify-between text-[#ff6600] py-2 text-sm font-bold">
                 Farm <ChevronDown className="h-4 w-4" />
               </Link>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
+              <Link href="/quote-type-selection" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 More Coverage <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
-              <a href="#" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
+              </Link>
+              <Link href="/quote-type-selection" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Reports <ChevronDown className="h-4 w-4 text-[#ff6600]" />
-              </a>
+              </Link>
               <Link href="/contact" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 About <ChevronDown className="h-4 w-4 text-[#ff6600]" />
               </Link>
@@ -695,24 +695,24 @@ export default function Home() {
               <h4 className="font-semibold mb-4 text-white">Products</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/farm" className="text-gray-400 hover:text-white transition-colors">
                     Farm Insurance
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/home" className="text-gray-400 hover:text-white transition-colors">
                     Home Insurance
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/auto" className="text-gray-400 hover:text-white transition-colors">
                     Auto Insurance
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <Link href="/quote-type-selection" className="text-gray-400 hover:text-white transition-colors">
                     Life Insurance
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

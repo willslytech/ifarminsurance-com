@@ -129,7 +129,7 @@ export default function Home() {
             {/* Logo and Primary Navigation */}
             <div className="flex items-center gap-8">
               {/* Logo */}
-              <div className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <img
                   src="/upload/logo.jpg"
                   alt="iFarmInsurance"
@@ -138,7 +138,7 @@ export default function Home() {
                 <span className="text-xl font-bold text-white tracking-wide">
                   iFARM INSURANCE
                 </span>
-              </div>
+              </Link>
 
               {/* Desktop Navigation Menu */}
               <div className="hidden lg:flex items-center gap-6">

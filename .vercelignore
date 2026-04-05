@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+*.log
+.env
+.env.local
+.env.production
+db
+upload
+*.zip
+*.bak
+*.backup
+.DS_Store
+Thumbs.db

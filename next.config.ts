@@ -1,19 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Remove 'output: "standalone"' for Vercel deployment
-  // Vercel handles this automatically
-
   /* config options here */
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   reactStrictMode: false,
 
   // Optimize images for Vercel
   images: {
     remotePatterns: [],
+    unoptimized: false,
   },
+
+  // Disable static optimization for dynamic routes
+  output: undefined,
 };
 
 export default nextConfig;

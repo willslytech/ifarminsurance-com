@@ -1,8 +1,13 @@
 {
-  "buildCommand": "bun run build",
+  "buildCommand": "npm run build",
   "outputDirectory": ".next",
-  "devCommand": "bun run dev",
-  "installCommand": "bun install",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "functions": {
+    "src/app/api/**/*": {
+      "maxDuration": 30
+    }
+  }
 }

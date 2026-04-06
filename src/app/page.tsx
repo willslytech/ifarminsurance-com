@@ -130,15 +130,12 @@ export default function Home() {
             {/* Logo and Primary Navigation */}
             <div className="flex items-center gap-8">
               {/* Logo */}
-              <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <img
                   src="/upload/logo.jpg"
                   alt="iFarmInsurance"
-                  className="h-8 w-auto"
+                  className="h-10 w-auto"
                 />
-                <span className="text-xl font-bold text-white tracking-wide">
-                  iFARM INSURANCE
-                </span>
               </Link>
 
               {/* Desktop Navigation Menu */}
@@ -203,6 +200,13 @@ export default function Home() {
         {isMenuOpen && (
           <div className="lg:hidden bg-[#1e3a8a] border-t border-blue-700/50">
             <div className="px-4 py-4 space-y-2">
+              <Link href="/" className="flex items-center justify-center pb-4 mb-4 border-b border-blue-700/50">
+                <img
+                  src="/upload/logo.jpg"
+                  alt="iFarmInsurance"
+                  className="h-10 w-auto"
+                />
+              </Link>
               <Link href="/auto" className="flex items-center justify-between text-white py-2 text-sm font-medium hover:text-[#ff6600] transition-colors">
                 Auto <ChevronDown className="h-4 w-4 text-[#ff6600]" />
               </Link>

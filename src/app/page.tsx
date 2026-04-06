@@ -132,7 +132,7 @@ export default function Home() {
               {/* Logo */}
               <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <img
-                  src="/assets/logo.jpg"
+                  src="/assets/src="/assets/IMG_2562.jpeg"
                   alt="iFarmInsurance"
                   className="h-10 w-auto"
                 />
@@ -246,8 +246,7 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-[900px]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/assets/tractor.jpeg"
+          <src="/assets/IMG_2583.jpeg"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -576,7 +575,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/assets/grain-bins-6.jpg"
+                  src="/assets/Grain bins 6.jpg"
                   alt="Grain Bins"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -590,7 +589,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/assets/hog-houses.jpg"
+                  src="/assets/Hog houses.jpg"
                   alt="Hog Houses"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -604,7 +603,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/assets/new-chicken-house-2.jpg"
+                  src="/assets/New chicken house 2.jpg"
                   alt="Chicken Houses"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -618,7 +617,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/assets/equipment-shed-2.jpg"
+                  src="/assets/Equipment shed 2.jpg"
                   alt="Equipment Shed"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -632,7 +631,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/assets/grain-elevators.jpg"
+                  
                   alt="Grain Elevators"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -646,7 +645,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/assets/burned-tractor-2.jpg"
+                  src="/assets/Burned tractor 2.jpg"
                   alt="Farm Equipment Protection"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

@@ -132,7 +132,7 @@ export default function Home() {
               {/* Logo */}
               <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
                 <img
-                  src="/upload/logo.jpg"
+                  src="/assets/logo.jpg"
                   alt="iFarmInsurance"
                   className="h-10 w-auto"
                 />
@@ -202,7 +202,7 @@ export default function Home() {
             <div className="px-4 py-4 space-y-2">
               <Link href="/" className="flex items-center justify-center pb-4 mb-4 border-b border-blue-700/50">
                 <img
-                  src="/upload/logo.jpg"
+                  src="/assets/logo.jpg"
                   alt="iFarmInsurance"
                   className="h-10 w-auto"
                 />
@@ -247,7 +247,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/upload/tractor.jpeg"
+            src="/assets/tractor.jpeg"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -576,7 +576,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/upload/grain-bins-6.jpg"
+                  src="/assets/grain-bins-6.jpg"
                   alt="Grain Bins"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -590,7 +590,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/upload/hog-houses.jpg"
+                  src="/assets/hog-houses.jpg"
                   alt="Hog Houses"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -604,7 +604,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/upload/new-chicken-house-2.jpg"
+                  src="/assets/new-chicken-house-2.jpg"
                   alt="Chicken Houses"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -618,7 +618,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/upload/equipment-shed-2.jpg"
+                  src="/assets/equipment-shed-2.jpg"
                   alt="Equipment Shed"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -632,7 +632,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/upload/grain-elevators.jpg"
+                  src="/assets/grain-elevators.jpg"
                   alt="Grain Elevators"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -646,7 +646,7 @@ export default function Home() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/upload/burned-tractor-2.jpg"
+                  src="/assets/burned-tractor-2.jpg"
                   alt="Farm Equipment Protection"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />

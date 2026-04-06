@@ -121,7 +121,7 @@ export default function FarmQuotePage() {
             <div className="flex items-center justify-between h-16">
               <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <img
-                  src="/upload/logo.jpg"
+                  src="/assets/logo.jpg"
                   alt="iFarmInsurance"
                   className="h-8 w-auto"
                 />
@@ -244,7 +244,7 @@ export default function FarmQuotePage() {
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <img
-                src="/upload/logo.jpg"
+                src="/assets/logo.jpg"
                 alt="iFarmInsurance"
                 className="h-8 w-auto"
               />

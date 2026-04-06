@@ -103,19 +103,19 @@ export default function Home() {
   const testimonials = [
     {
       name: 'Sarah Johnson',
-      location: 'Iowa',
+      location: 'South Carolina',
       quote: 'iFarmInsurance made finding the right coverage for our family farm so easy. We saved 40% compared to our previous provider!',
       rating: 5,
     },
     {
       name: 'Michael Chen',
-      location: 'Nebraska',
+      location: 'North Carolina',
       quote: 'The comparison process was seamless. I found better coverage for my farm equipment in just a few minutes.',
       rating: 5,
     },
     {
       name: 'Emily Rodriguez',
-      location: 'Kansas',
+      location: 'Georgia',
       quote: 'Finally, an insurance platform that understands farmers. The quotes were accurate and the savings were real.',
       rating: 5,
     },
@@ -244,7 +244,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src="/upload/tractor.jpeg"
-            alt="Farm equipment"
+            alt=""
             className="w-full h-full object-cover"
           />
           {/* Dark Overlay for Text Readability */}

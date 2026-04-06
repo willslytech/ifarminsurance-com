@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
   // Optimize images for Vercel
   images: {
     remotePatterns: [],
-    unoptimized: false,
+    unoptimized: true,
   },
 
   // Disable static optimization for dynamic routes
